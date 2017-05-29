@@ -15,19 +15,23 @@ class App extends Component {
        msg : ''
    }
 
-   this.msg = "An Apple a day keeps the doctor away!!";
+   this.state.msg = "An Apple a day keeps the doctor away!!";
    console.log(this.state);
   }
 
   render() {
    
     return (
-      <div>
+      <div className = "main-container">
         <div className = "header">
           <h3>Patient Health Monitoring</h3>
         </div>
-        <Questionaire status = {this.state} changeMethod = {(state,val)=>this.generatePrescription}/>
-        <Prescription message = {this.msg}/>
+        <div className="questionaire-block">
+          <Questionaire status = {this.state} changeMethod = {(state,val)=>this.generatePrescription(state,val)}/>
+        </div>
+        <div className="prescription-block">
+          <Prescription message = {this.state.msg}/>
+        </div>
       </div>
     );
   }
@@ -36,41 +40,41 @@ class App extends Component {
       console.log(state);
       console.log(val);
       if(state.status.headAche && state.status.fever && state.status.stomachAche){
-       this.setState({
+       this.state.setState({
         msg : "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
       });
       }else if(state.status.headAche && state.status.fever){
-        this.setState({
+        this.state.setState({
           msg : "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
         });
         //val.msg = "We would suggest you to take tablet 'DOLO 350' for today. If it is not under control, please visit your nearest doctor";
       }else if(state.status.fever && state.status.stomachAche){
-        this.setState({
+        this.state.setState({
           msg : "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
         });
         //val.msg = "We would suggest you to take tablet 'Crocin and Sporlac' for today. If it is not under control, please visit your nearest doctor";
       }else if(state.status.headAche && state.status.stomachAche){
-        this.setState({
+        this.state.setState({
           msg : "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
         });
         //val.msg = "We would suggest you to take tablet 'Sporlac' for today. If it is not under control, please visit your nearest doctor";
       }else if(state.status.headAche){
-        this.setState({
+        this.state.setState({
           msg : "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
         });
         //val.msg = "We would suggest you to take tablet 'Crocin' for today. This symptom seems to be very normal. Please try not to take tension and rest well";
       }else if(state.status.fever){
-        this.setState({
+        this.state.setState({
           msg : "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
         });
         //val.msg = "We would suggest you to take tablet 'Dolo' for today. If it is not under control, please visit your nearest doctor";
       }else if(state.status.stomachAche){
-        this.setState({
+        this.state.setState({
           msg : "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
         });
         //val.msg = "We would suggest you to take tablet 'Sporlac' for today. If it is not under control, please visit your nearest doctor";
       }else{
-        this.setState({
+        this.state.setState({
           msg : "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
         });
         //val.msg = "An Apple a day keeps the doctor away!!";

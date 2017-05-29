@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class Prescription extends Component {
   constructor(props) {
     super(props);
+    console.log(this.props.message)
   }
 
   render() {
@@ -12,7 +13,7 @@ class Prescription extends Component {
           <h5>Prescription</h5>
         </div>
         <div>
-          <h3>{this.props.message}</h3>
+          <h5>{this.props.message}</h5>
         </div>
       </div>
     );
