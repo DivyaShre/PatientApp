@@ -37,9 +37,9 @@ class Questionaire extends Component{
     }else if(this.props.status.headAche && this.props.status.fever){
         message = "We suggest you to take tablet Dolo 650 two times for today. If it continues, please visit your nearest doctor!!"
     }else if(this.props.status.fever && this.props.status.stomachAche){
-        message = "We suggest you to take tablet Sporlac and Crocin two times for today. If it continues, please visit your nearest doctor!!"
+        message = "We suggest you to take tablet Sporlac and Dolo 650 two times for today. If it continues, please visit your nearest doctor!!"
     }else if(this.props.status.headAche && this.props.status.stomachAche){
-        message = "We suggest you to take tablet Sporlac two times for today. If it continues, please visit your nearest doctor!!"
+        message = "We suggest you to take tablet Sporlac and Crocin two times for today. If it continues, please visit your nearest doctor!!"
     }else if(this.props.status.headAche){
         message = "This symptom is very common. We suggest you to take tablet Crocin and rest well!";
     }else if(this.props.status.fever){
