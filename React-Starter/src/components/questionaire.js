@@ -18,34 +18,37 @@ class Questionaire extends Component{
   }
 
   toggleCheckboxChange = (props, value) => {
-    let message = '';
+    let message = '', label = '';
     if(props == 1){
       this.props.status.headAche = value;
+      label = "headAche";
     }
     else if(props == 2){
       this.props.status.fever = value;
+      label = "fever";
     }
     else if(props == 3){
       this.props.status.stomachAche = value;
+      label = "stomachAche";
     }
 
     if(this.props.status.headAche && this.props.status.fever && this.props.status.stomachAche){
         message = "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
     }else if(this.props.status.headAche && this.props.status.fever){
-        message = "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
+        message = "We suggest you to take tablet Dolo 650 two times for today. If it continues, please visit your nearest doctor!!"
     }else if(this.props.status.fever && this.props.status.stomachAche){
-        message = "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
+        message = "We suggest you to take tablet Sporlac and Crocin two times for today. If it continues, please visit your nearest doctor!!"
     }else if(this.props.status.headAche && this.props.status.stomachAche){
-        message = "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
+        message = "We suggest you to take tablet Sporlac two times for today. If it continues, please visit your nearest doctor!!"
     }else if(this.props.status.headAche){
-        message = "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
+        message = "This symptom is very common. We suggest you to take tablet Crocin and rest well!";
     }else if(this.props.status.fever){
-        message = "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
+        message = "We suggest you to take tablet Dolo 650 two times for today. If it continues, please visit your nearest doctor!!"
     }else if(this.props.status.stomachAche){
-        message = "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
+        message = "We suggest you to take tablet Sporlac two times for today. If it continues, please visit your nearest doctor!!"
     }else{
-        message ="This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
-    } 
+        message = "An Apple a day keeps the doctor away!!";
+    }
 
     this.props.status.msg = message;
   }

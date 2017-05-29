@@ -17,6 +17,17 @@ class App extends Component {
    this.state.msg = "An Apple a day keeps the doctor away!!";
   }
 
+  handleChange(label,value,msg){
+    if(label == 'headAche')
+      this.setState({headAche:value});
+    else if(label == 'fever')
+      this.setState({fever:value});
+    else if(label == 'stomachAche')
+      this.setState({stomachAche: value});
+
+    this.setState({msg: msg});
+  }
+
   render() {
    
     return (
@@ -25,7 +36,7 @@ class App extends Component {
           <h3>Patient Health Monitoring</h3>
         </div>
         <div className="questionaire-block">
-          <Questionaire status = {this.state}/>
+          <Questionaire status = {this.state} onChange = {(label,value,msg)=>{this.handleChange(label,value,msg)}}/>
         </div>
         <div className="prescription-block">
           <Prescription message = {this.state.msg}/>
