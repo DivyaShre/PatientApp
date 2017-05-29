@@ -21,59 +21,36 @@ class Questionaire extends Component{
     console.log("props="+props);
     console.log("value="+value);
     console.log(this.props.changeMethod)
-      if(props == 1){
-        this.props.status.headAche = value;
-        //this.props.changeMethod(this.props, this.props.status);
-      }
-      else if(props == 2){
-        this.props.status.fever = value;
-        //this.props.changeMethod(this.props, this.props.status);
-      }
-      else if(props == 3){
-        this.props.status.stomachAche = value;
-        //this.props.changeMethod(this.props, this.props.status);
-      }
+    let message = '';
+    if(props == 1){
+      this.props.status.headAche = value;
+    }
+    else if(props == 2){
+      this.props.status.fever = value;
+    }
+    else if(props == 3){
+      this.props.status.stomachAche = value;
+    }
 
-      if(this.props.status.headAche && this.props.status.fever && this.props.status.stomachAche){
-       this.props.status.setState({
-        msg : "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
-      });
-      }else if(this.props.status.headAche && this.props.status.fever){
-        this.props.status.setState({
-          msg : "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
-        });
-        //val.msg = "We would suggest you to take tablet 'DOLO 350' for today. If it is not under control, please visit your nearest doctor";
-      }else if(this.props.status.fever && this.props.status.stomachAche){
-        this.props.status.setState({
-          msg : "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
-        });
-        //val.msg = "We would suggest you to take tablet 'Crocin and Sporlac' for today. If it is not under control, please visit your nearest doctor";
-      }else if(this.props.status.headAche && this.props.status.stomachAche){
-        this.props.status.setState({
-          msg : "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
-        });
-        //val.msg = "We would suggest you to take tablet 'Sporlac' for today. If it is not under control, please visit your nearest doctor";
-      }else if(this.props.status.headAche){
-        this.props.status.setState({
-          msg : "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
-        });
-        //val.msg = "We would suggest you to take tablet 'Crocin' for today. This symptom seems to be very normal. Please try not to take tension and rest well";
-      }else if(this.props.status.fever){
-        this.props.status.setState({
-          msg : "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
-        });
-        //val.msg = "We would suggest you to take tablet 'Dolo' for today. If it is not under control, please visit your nearest doctor";
-      }else if(this.props.status.stomachAche){
-        this.props.status.setState({
-          msg : "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
-        });
-        //val.msg = "We would suggest you to take tablet 'Sporlac' for today. If it is not under control, please visit your nearest doctor";
-      }else{
-        this.props.status.setState({
-          msg : "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
-        });
-        //val.msg = "An Apple a day keeps the doctor away!!";
-      }  
+    if(this.props.status.headAche && this.props.status.fever && this.props.status.stomachAche){
+        message = "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
+    }else if(this.props.status.headAche && this.props.status.fever){
+        message = "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
+    }else if(this.props.status.fever && this.props.status.stomachAche){
+        message = "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
+    }else if(this.props.status.headAche && this.props.status.stomachAche){
+        message = "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
+    }else if(this.props.status.headAche){
+        message = "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
+    }else if(this.props.status.fever){
+        message = "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
+    }else if(this.props.status.stomachAche){
+        message = "This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
+    }else{
+        message ="This symptom seems too serious!! We suggest you to go to doctor immedietly!!"
+    } 
+
+    this.props.status.msg = message;
   }
 
   createCheckBox = (props)=>{
