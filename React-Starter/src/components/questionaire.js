@@ -51,6 +51,7 @@ class Questionaire extends Component{
     }
 
     this.props.status.msg = message;
+    this.props.onChange(label, value, message);
   }
 
   createCheckBox = (props)=>{
