@@ -18,9 +18,6 @@ class Questionaire extends Component{
   }
 
   toggleCheckboxChange = (props, value) => {
-    console.log("props="+props);
-    console.log("value="+value);
-    console.log(this.props.changeMethod)
     let message = '';
     if(props == 1){
       this.props.status.headAche = value;

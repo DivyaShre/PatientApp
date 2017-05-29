@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 class Prescription extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props.message)
-  }
+   }
 
   render() {
     return (

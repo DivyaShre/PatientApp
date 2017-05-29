@@ -4,7 +4,6 @@ import ReactDom from 'react-dom';
 class CheckBox extends Component {
 	constructor(props){
 		super(props);
-		console.log(this.props.onStatusChange);
 	}
 
 	state={
