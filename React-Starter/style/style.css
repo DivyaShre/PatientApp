@@ -13,14 +13,14 @@
 }
 .questions{
   text-align:center;
-  margin-top:50px;
+  margin-top:20px;
 }
 .check-box{
-	margin-top: 10px;
     width: 150px;
     display: block;
     text-align: left;
     margin: 0 auto;
+    margin-top: 20px;
 }
 input[type=checkbox]{
 	margin-right: 5px;
